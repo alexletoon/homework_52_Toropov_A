@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new article</title>
+</head>
+<body>
+    <h1>Add new task</h1>
+
+    <form action="task/new_task" method="POST">
+        {% csrf_token %}
+        <textarea name="description" id="description" cols="30" rows="10">Задача</textarea>
+        <select name="status" id="status">
+            <option value="new">Новая</option>
+            <option value="in_progress">В процессе</option>
+            <option value="done">Выполнено</option>
+        </select>
+        <label for="date">Введите дату выполнения</label>
+        <input type="date" name="date" id="date">
+        <input type="submit">
+    </form>
+</body>
+</html>
