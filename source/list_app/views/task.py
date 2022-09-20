@@ -1,5 +1,7 @@
-import re
+
 from django.shortcuts import render
+
+from list_app.models import Task
 
 
 def add_task_view(request):
@@ -13,4 +15,10 @@ def add_task_view(request):
     return render (request, 'task.html', context=context)
 
 
-# def display_task(request):
+def display_task_view(request):
+    id = request.GET.get('id')
+    task = Task.objects.get(pk=id)
+    context = {
+        "task": task
+    }
+    return render(request, 'task.html', context=context)

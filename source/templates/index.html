@@ -9,6 +9,10 @@
 <body>
     <h1>Welcome to To-Do-List</h1>
     <a href="/task/new_task">Add new task</a>
-
+    {% for task in tasks %}
+        <p>Задача: <br> {{task.description}} </p>
+        <p>Status - {{task.status}} </p>
+        <p><a href="task/?id={{ task.id }}">Подробнее</a></p>
+    {% endfor %}
 </body>
 </html>
