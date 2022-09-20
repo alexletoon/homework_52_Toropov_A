@@ -9,7 +9,7 @@
 <body>
     <h1>Add new task</h1>
 
-    <form action="/" method="POST">
+    <form action="/task/new_task/" method="POST">
         {% csrf_token %}
         <textarea name="description" id="description" cols="30" rows="10">Задача</textarea>
         <br>
@@ -20,7 +20,7 @@
         </select>
         <br>
         <label for="date">Введите дату выполнения</label>
-        <input type="text" name="date" id="date">
+        <input type="date" name="date" id="date">
         <br>
         <input type="submit">
     </form>

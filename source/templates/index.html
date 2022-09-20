@@ -12,6 +12,7 @@
     {% for task in tasks %}
         <p>Задача: <br> {{task.description}} </p>
         <p>Status - {{task.status}} </p>
+        <p>Deadline - {{task.deadline_date}} </p>
         <p><a href="task/?id={{ task.id }}">Подробнее</a></p>
     {% endfor %}
 </body>
