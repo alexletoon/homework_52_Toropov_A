@@ -11,3 +11,6 @@ def add_task_view(request):
         'date': request.POST.get('date')
     }
     return render (request, 'task.html', context=context)
+
+
+# def display_task(request):

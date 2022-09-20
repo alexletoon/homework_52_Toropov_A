@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from list_app.models import Task
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('id', 'description', 'status', 'deadline_date', 'created_at')
+    list_filter = ('id', 'status', 'deadline_date', 'created_at')
+    search_field = ('status', 'deadline_date')
+    fields = ('status','description', 'deadline_date', 'created_at')
+
+
+admin.site.register(Task, TaskAdmin)
